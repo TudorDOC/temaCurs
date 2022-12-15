@@ -1,6 +1,9 @@
 import requests
+'''Requests folosit pentru a prelua codul sursa a paginii html.'''
 from bs4 import BeautifulSoup
+'''BeautifuLSoup este folosit pentru a naviga prin codul sursa HTML'''
 import configparser
+'''Folosit pentru a creea un fisier .ini'''
 
 url = input("Enter an URL: ")
 data = requests.get(url)  # luam codul sursa a paginii html
@@ -29,7 +32,6 @@ def print_meta_description(soup):
     meta = soup.find('meta', attrs={'name': 'description'})
     print("Description meta: " + meta["content"])
 
-
-
 print_title(soup)
 print_meta_description(soup)
+
